@@ -1,6 +1,7 @@
 ﻿{
   "version": "1.0.0-*",
 	"dependencies": {
+		"GladNet.ASP.Formatters": "1.0.0-*",
 		"GladNet.Message": "2.0.12",
 		"Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
 	},

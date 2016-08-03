@@ -1336,6 +1336,21 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "GladNet.ASP.Formatters/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "GladNet.Message": "2.0.12",
+          "GladNet.Serializer": "2.0.12",
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
+        },
+        "compile": {
+          "net451/GladNet.ASP.Formatters.dll": {}
+        },
+        "runtime": {
+          "net451/GladNet.ASP.Formatters.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.5.2": {
@@ -2671,6 +2686,21 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "GladNet.ASP.Formatters/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "GladNet.Message": "2.0.12",
+          "GladNet.Serializer": "2.0.12",
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
+        },
+        "compile": {
+          "net452/GladNet.ASP.Formatters.dll": {}
+        },
+        "runtime": {
+          "net452/GladNet.ASP.Formatters.dll": {}
         }
       }
     }
@@ -4272,10 +4302,16 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._"
       ]
+    },
+    "GladNet.ASP.Formatters/1.0.0": {
+      "type": "project",
+      "path": "../GladNet.ASP.Formatters/project.json",
+      "msbuildProject": "../GladNet.ASP.Formatters/GladNet.ASP.Formatters.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "GladNet.ASP.Formatters >= 1.0.0-*",
       "GladNet.Message >= 2.0.12",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final"
     ],

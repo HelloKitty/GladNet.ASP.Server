@@ -40,15 +40,31 @@ namespace GladNet.ASP.Server
 			//This works because if there is anything in the routing stack it wasn't from this ASP server so we can enable
 			//routeback and it'll be sent back through the system
 
-			//PacketPayload payload
-			return null;
+			TPayloadType payload = gladNetRequest.Payload.Data as TPayloadType;
+
+			if (payload == null)
+				return new BadRequestResult();
+
+			PacketPayload responsePayload = await HandlePost(payload);
+
+			ResponseMessage responseMessage = new ResponseMessage(responsePayload);
+
+			//Now check routeback info
+			if(gladNetRequest.isMessageRoutable)
+			{
+				gladNetRequest.ExportRoutingDataTo(responseMessage);
+				responseMessage.isRoutingBack = true;
+			}
+
+			//Return an ASP result
+			return new GladNetObjectResult(responseMessage);
 		}
 
 		/// <summary>
 		/// Async/Task-based handler for HttpPost requests for GladNet.
 		/// </summary>
 		/// <param name="payloadInstance">Provided internally parsed instance.</param>
-		/// <returns></returns>
+		/// <returns>An awaitable PacketPayload result.</returns>
 		public abstract Task<PacketPayload> HandlePost(TPayloadType payloadInstance);
 	}
 }

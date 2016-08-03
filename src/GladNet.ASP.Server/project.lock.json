@@ -12,7 +12,7 @@
           "lib/net35/Easyception.dll": {}
         }
       },
-      "GladNet.Common/2.0.9": {
+      "GladNet.Common/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0"
@@ -24,7 +24,7 @@
           "lib/net35/GladNet.Common.dll": {}
         }
       },
-      "GladNet.Encryption/2.0.9": {
+      "GladNet.Encryption/2.0.12": {
         "type": "package",
         "compile": {
           "lib/net35/GladNet.Encryption.dll": {}
@@ -33,14 +33,14 @@
           "lib/net35/GladNet.Encryption.dll": {}
         }
       },
-      "GladNet.Message/2.0.9": {
+      "GladNet.Message/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0",
-          "GladNet.Common": "2.0.9",
-          "GladNet.Encryption": "2.0.9",
-          "GladNet.Payload": "2.0.9",
-          "GladNet.Serializer": "2.0.9"
+          "GladNet.Common": "2.0.12",
+          "GladNet.Encryption": "2.0.12",
+          "GladNet.Payload": "2.0.12",
+          "GladNet.Serializer": "2.0.12"
         },
         "compile": {
           "lib/net35/GladNet.Message.dll": {}
@@ -49,11 +49,11 @@
           "lib/net35/GladNet.Message.dll": {}
         }
       },
-      "GladNet.Payload/2.0.9": {
+      "GladNet.Payload/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0",
-          "GladNet.Serializer": "2.0.9"
+          "GladNet.Serializer": "2.0.12"
         },
         "compile": {
           "lib/net35/GladNet.Payload.dll": {}
@@ -62,7 +62,7 @@
           "lib/net35/GladNet.Payload.dll": {}
         }
       },
-      "GladNet.Serializer/2.0.9": {
+      "GladNet.Serializer/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0"
@@ -1348,7 +1348,7 @@
           "lib/net35/Easyception.dll": {}
         }
       },
-      "GladNet.Common/2.0.9": {
+      "GladNet.Common/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0"
@@ -1360,7 +1360,7 @@
           "lib/net35/GladNet.Common.dll": {}
         }
       },
-      "GladNet.Encryption/2.0.9": {
+      "GladNet.Encryption/2.0.12": {
         "type": "package",
         "compile": {
           "lib/net35/GladNet.Encryption.dll": {}
@@ -1369,14 +1369,14 @@
           "lib/net35/GladNet.Encryption.dll": {}
         }
       },
-      "GladNet.Message/2.0.9": {
+      "GladNet.Message/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0",
-          "GladNet.Common": "2.0.9",
-          "GladNet.Encryption": "2.0.9",
-          "GladNet.Payload": "2.0.9",
-          "GladNet.Serializer": "2.0.9"
+          "GladNet.Common": "2.0.12",
+          "GladNet.Encryption": "2.0.12",
+          "GladNet.Payload": "2.0.12",
+          "GladNet.Serializer": "2.0.12"
         },
         "compile": {
           "lib/net35/GladNet.Message.dll": {}
@@ -1385,11 +1385,11 @@
           "lib/net35/GladNet.Message.dll": {}
         }
       },
-      "GladNet.Payload/2.0.9": {
+      "GladNet.Payload/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0",
-          "GladNet.Serializer": "2.0.9"
+          "GladNet.Serializer": "2.0.12"
         },
         "compile": {
           "lib/net35/GladNet.Payload.dll": {}
@@ -1398,7 +1398,7 @@
           "lib/net35/GladNet.Payload.dll": {}
         }
       },
-      "GladNet.Serializer/2.0.9": {
+      "GladNet.Serializer/2.0.12": {
         "type": "package",
         "dependencies": {
           "Easyception": "2.0.0"
@@ -2686,56 +2686,56 @@
         "lib/net35/Easyception.dll"
       ]
     },
-    "GladNet.Common/2.0.9": {
-      "sha512": "DCv8xwRGlZ/0ghv0wZFchn2xTS+xzfu2N/Ebohwm0aBEqQco4Fk5y+2h0LALXYhrJGi7A47r/9jP/AYlYO7dpQ==",
+    "GladNet.Common/2.0.12": {
+      "sha512": "qp5znoNPyoFfybme0pYsA8qil9Gc8Ek91074vQQ7wMsJuajn6Lzl2KcrUx+GdV2IEpYaONCIF7OBOnahQII5Zg==",
       "type": "package",
-      "path": "GladNet.Common/2.0.9",
+      "path": "GladNet.Common/2.0.12",
       "files": [
-        "GladNet.Common.2.0.9.nupkg.sha512",
+        "GladNet.Common.2.0.12.nupkg.sha512",
         "GladNet.Common.nuspec",
         "lib/net35/GladNet.Common.XML",
         "lib/net35/GladNet.Common.dll"
       ]
     },
-    "GladNet.Encryption/2.0.9": {
-      "sha512": "HpUCkQbM4tVO5iDBzMf1sh1V6YffGAHj5RzUkMcgmwLJkjzkZJGaMi7ppHe0UDKPs+qcN3Ls4O0I7H0rLLI+Ew==",
+    "GladNet.Encryption/2.0.12": {
+      "sha512": "LQwKOum/Ubke9h9L0/tBOdPbrSBLhx9g4Ap6uwL5/C3emff3vp5BiFcBTSy6S7otzTk4ENXpUYPnKUm80rD9xg==",
       "type": "package",
-      "path": "GladNet.Encryption/2.0.9",
+      "path": "GladNet.Encryption/2.0.12",
       "files": [
-        "GladNet.Encryption.2.0.9.nupkg.sha512",
+        "GladNet.Encryption.2.0.12.nupkg.sha512",
         "GladNet.Encryption.nuspec",
         "lib/net35/GladNet.Encryption.XML",
         "lib/net35/GladNet.Encryption.dll"
       ]
     },
-    "GladNet.Message/2.0.9": {
-      "sha512": "3V570vRYSSBAxCk3g1/o/Simh0FXi17Ghrh7pvabeDoaJgWMXIqcG+rcjZp7BxMZ6w+tfgzxzIFNHtvpOPcyjQ==",
+    "GladNet.Message/2.0.12": {
+      "sha512": "pjBAT8basMKKq52xQqXp9ARan2QcxhDOAdnRI1npg8ZEi5fq4BPKFnOHPBosd1OYPKGZ0iHa5BBlWmBFWLX6zw==",
       "type": "package",
-      "path": "GladNet.Message/2.0.9",
+      "path": "GladNet.Message/2.0.12",
       "files": [
-        "GladNet.Message.2.0.9.nupkg.sha512",
+        "GladNet.Message.2.0.12.nupkg.sha512",
         "GladNet.Message.nuspec",
         "lib/net35/GladNet.Message.XML",
         "lib/net35/GladNet.Message.dll"
       ]
     },
-    "GladNet.Payload/2.0.9": {
-      "sha512": "SDYUxDJCueDyxMwtNtLPNkjt5gy10516QAmklZ0pKuNBDdqEy4GCaA4FoiGDcNQNiGrCG7MSBIdESkjVKAK9ZA==",
+    "GladNet.Payload/2.0.12": {
+      "sha512": "NQSkqLnUWnJkOl9d85UuVk5tqsmOACb/TKdIXRtmlCzHhD3ZaDNu5USkbhgAQY7tOOYb3Gza3mr26Rhm9DCXcg==",
       "type": "package",
-      "path": "GladNet.Payload/2.0.9",
+      "path": "GladNet.Payload/2.0.12",
       "files": [
-        "GladNet.Payload.2.0.9.nupkg.sha512",
+        "GladNet.Payload.2.0.12.nupkg.sha512",
         "GladNet.Payload.nuspec",
         "lib/net35/GladNet.Payload.XML",
         "lib/net35/GladNet.Payload.dll"
       ]
     },
-    "GladNet.Serializer/2.0.9": {
-      "sha512": "ty3TMpGe3daRXv14nq1E258r8suc6Z/Q0fRT24WLCdRLJZlZCEW5Thihyv7XIVT11hMwDntm1pUEixGriUX7Dg==",
+    "GladNet.Serializer/2.0.12": {
+      "sha512": "EFuDW9fx9jK0eRfFGF8pkdMoFs3FUfvmiKeKCKOk6+2II1mNWqIe4ZMovo2GP/ORVqNfYhiCnPLtm8rGV1OOtg==",
       "type": "package",
-      "path": "GladNet.Serializer/2.0.9",
+      "path": "GladNet.Serializer/2.0.12",
       "files": [
-        "GladNet.Serializer.2.0.9.nupkg.sha512",
+        "GladNet.Serializer.2.0.12.nupkg.sha512",
         "GladNet.Serializer.nuspec",
         "lib/net35/GladNet.Serializer.XML",
         "lib/net35/GladNet.Serializer.dll"
@@ -4276,14 +4276,11 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "GladNet.Message >= 2.0.12",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final"
     ],
-    ".NETFramework,Version=v4.5.1": [
-      "GladNet.Message >= 2.0.9"
-    ],
-    ".NETFramework,Version=v4.5.2": [
-      "GladNet.Message >= 2.0.9"
-    ]
+    ".NETFramework,Version=v4.5.1": [],
+    ".NETFramework,Version=v4.5.2": []
   },
   "tools": {},
   "projectFileToolGroups": {}

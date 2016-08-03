@@ -1,19 +1,18 @@
 ﻿{
   "version": "1.0.0-*",
 	"dependencies": {
+		"GladNet.Message": "2.0.12",
 		"Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
 	},
 
 	"frameworks": {
 		"net451": {
 			"dependencies": {
-				"GladNet.Message": "2.0.9"
 			}
 		},
 		"net452": {
 			"dependencies": {
-				"GladNet.Message": "2.0.9"
 			}
-		},
+		}
 	}
 }

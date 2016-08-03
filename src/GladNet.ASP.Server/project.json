@@ -1,25 +1,19 @@
 ﻿{
   "version": "1.0.0-*",
+	"dependencies": {
+		"Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
+	},
 
-  "dependencies": {
-	"NETStandard.Library": "1.6.0"
-  },
-
-  "frameworks": {
-			"net451": {
-				"dependencies": {
-					"GladNet.Message": "2.0.9"
-				}
-			},
-			"net452": {
-				"dependencies": {
-					"GladNet.Message": "2.0.9"
-				}
-			},
-			"net45": {
-				"dependencies": {
-					"GladNet.Message": "2.0.9"
-				}
+	"frameworks": {
+		"net451": {
+			"dependencies": {
+				"GladNet.Message": "2.0.9"
 			}
-  }
+		},
+		"net452": {
+			"dependencies": {
+				"GladNet.Message": "2.0.9"
+			}
+		},
+	}
 }

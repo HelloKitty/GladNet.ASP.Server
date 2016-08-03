@@ -6,20 +6,20 @@
   },
 
   "frameworks": {
-			"netstandard1.6": {
-				"imports": "dnxcore50"
-			},
-			"netcoreapp1.0": {
-				"imports": "dnxcore50"
-			},
 			"net451": {
-
+				"dependencies": {
+					"GladNet.Message": "2.0.9"
+				}
 			},
 			"net452": {
-
+				"dependencies": {
+					"GladNet.Message": "2.0.9"
+				}
 			},
 			"net45": {
-
+				"dependencies": {
+					"GladNet.Message": "2.0.9"
+				}
 			}
   }
 }

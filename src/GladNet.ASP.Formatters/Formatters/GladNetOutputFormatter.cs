@@ -13,15 +13,14 @@ namespace GladNet.ASP.Formatters
 	/// <summary>
 	/// Input formatter for GladNet serialization.
 	/// </summary>
-	public class GladNetOutputFormatter<TSerializationStrategy> : OutputFormatter
-		where TSerializationStrategy : ISerializerStrategy
+	public class GladNetOutputFormatter : OutputFormatter
 	{
 		/// <summary>
 		/// Strategy to use for serialization.
 		/// </summary>
-		private TSerializationStrategy serializerStrategy { get; }
+		private ISerializerStrategy serializerStrategy { get; }
 
-		public GladNetOutputFormatter(TSerializationStrategy serializationStrategy)
+		public GladNetOutputFormatter(ISerializerStrategy serializationStrategy)
 		{
 			if (serializationStrategy == null)
 				throw new ArgumentNullException(nameof(serializationStrategy), $"Input formatter requires a serialization strategy.");

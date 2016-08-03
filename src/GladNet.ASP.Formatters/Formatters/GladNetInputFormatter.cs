@@ -13,8 +13,7 @@ namespace GladNet.ASP.Formatters
 	/// <summary>
 	/// Input formatter for GladNet serialization.
 	/// </summary>
-	public class GladNetInputFormatter<TDeserializationStrategy> : InputFormatter
-		where TDeserializationStrategy : IDeserializerStrategy
+	public class GladNetInputFormatter: InputFormatter
 	{
 		/// <summary>
 		/// Strategy to use for deserialization.

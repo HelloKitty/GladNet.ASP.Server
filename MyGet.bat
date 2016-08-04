@@ -1,2 +1,2 @@
 dotnet restore
-dotnet build src/*/project.json -c release
+dotnet pack src/*/project.json -c release

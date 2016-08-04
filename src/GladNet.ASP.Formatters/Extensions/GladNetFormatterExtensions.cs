@@ -21,6 +21,8 @@ namespace Microsoft.AspNet.Builder
 		/// Also registers the gladnet media header to map to these formatters.
 		/// </summary>
 		/// <param name="builder">Builder to chain off.</param>
+		/// <param name="serializerStrat">Serialization strategy</param>
+		/// <param name="deserializerStrat">Deserialization strategy.</param>
 		/// <returns>The fluent <see cref="IMvcCoreBuilder"/> instance.</returns>
 		public static IMvcCoreBuilder AddGladNetFormatters(this IMvcCoreBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
 		{
@@ -38,7 +40,9 @@ namespace Microsoft.AspNet.Builder
 		/// Also registers the gladnet media header to map to these formatters.
 		/// </summary>
 		/// <param name="builder">Builder to chain off.</param>
-		/// <returns>The fluent <see cref="IMvcBuilder"/> instance.</returns>
+		/// <param name="serializerStrat">Serialization strategy</param>
+		/// <param name="deserializerStrat">Deserialization strategy.</param>
+		/// <returns>The fluent <see cref="IMvcCoreBuilder"/> instance.</returns>
 		public static IMvcBuilder AddGladNetFormatters(this IMvcBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
 		{
 			//Add the formatters to the options.

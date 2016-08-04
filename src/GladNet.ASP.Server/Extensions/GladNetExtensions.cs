@@ -19,11 +19,14 @@ namespace Microsoft.AspNet.Builder
 	public static class GladNetExtensions
 	{
 		/// <summary>
-		/// Adds the <see cref="ProtobufNetInputFormatter"/> and <see cref="ProtobufNetOutputFormatter"/> to the known formatters.
-		/// Also registers the Protobuf-net media header to map to these formatters.
+		/// Adds the <see cref="GladNetInputFormatter"/> and <see cref="GladNetOutputFormatter"/> to the known formatters.
+		/// Also registers the gladnet media header to map to these formatters.
 		/// </summary>
 		/// <param name="builder">Builder to chain off.</param>
-		/// <returns>The fluent <see cref="IMvcCoreBuilder"/> instance.</returns>
+		/// <param name="serializerStrat">Serialization strategy</param>
+		/// <param name="deserializerStrat">Deserialization strategy.</param>
+		/// <param name="registry">Serialization registry.</param>
+		/// <returns>The fluent <see cref="IServiceCollection"/> instance.</returns>
 		public static IServiceCollection AddGladNet(this IServiceCollection builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat, ISerializerRegistry registry)
 		{
 			//need to register these types

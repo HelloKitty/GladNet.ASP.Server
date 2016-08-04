@@ -17,12 +17,12 @@ namespace Microsoft.AspNet.Builder
 	public static class GladNetFormatterExtensions
 	{
 		/// <summary>
-		/// Adds the <see cref="ProtobufNetInputFormatter"/> and <see cref="ProtobufNetOutputFormatter"/> to the known formatters.
-		/// Also registers the Protobuf-net media header to map to these formatters.
+		/// Adds the <see cref="GladNetInputFormatter"/> and <see cref="GladNetOutputFormatter"/> to the known formatters.
+		/// Also registers the gladnet media header to map to these formatters.
 		/// </summary>
 		/// <param name="builder">Builder to chain off.</param>
 		/// <returns>The fluent <see cref="IMvcCoreBuilder"/> instance.</returns>
-		public static IMvcCoreBuilder AddProtobufNetFormatters(this IMvcCoreBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
+		public static IMvcCoreBuilder AddGladNetFormatters(this IMvcCoreBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
 		{
 			//Add the formatters to the options.
 			return builder.AddMvcOptions(options =>
@@ -34,12 +34,12 @@ namespace Microsoft.AspNet.Builder
 		}
 
 		/// <summary>
-		/// Adds the <see cref="ProtobufNetInputFormatter"/> and <see cref="ProtobufNetOutputFormatter"/> to the known formatters.
-		/// Also registers the Protobuf-net media header to map to these formatters.
+		/// Adds the <see cref="GladNetInputFormatter"/> and <see cref="GladNetOutputFormatter"/> to the known formatters.
+		/// Also registers the gladnet media header to map to these formatters.
 		/// </summary>
 		/// <param name="builder">Builder to chain off.</param>
 		/// <returns>The fluent <see cref="IMvcBuilder"/> instance.</returns>
-		public static IMvcBuilder AddProtobufNetFormatters(this IMvcBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
+		public static IMvcBuilder AddGladNetFormatters(this IMvcBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
 		{
 			//Add the formatters to the options.
 			return builder.AddMvcOptions(options =>

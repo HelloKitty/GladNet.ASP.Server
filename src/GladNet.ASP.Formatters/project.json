@@ -1,10 +1,10 @@
-﻿{
+{
   "version": "1.0.0-*",
-	"dependencies": {
-		"GladNet.Message": "2.0.12",
-		"GladNet.Serializer": "2.0.12",
-		"Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
-	},
+    "dependencies": {
+        "GladNet.Message": "2.0.16",
+        "GladNet.Serializer": "2.0.16",
+        "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
+    },
 
 	"frameworks": {
 		"net451": {

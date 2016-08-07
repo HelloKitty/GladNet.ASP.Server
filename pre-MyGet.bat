@@ -7,3 +7,5 @@ cd ./src/GladNet.ASP.Formatters
 dotnet restore
 cd ..
 cd ..
+
+%nuget% update GladNet.ASP.Server.sln -noninteractive

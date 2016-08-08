@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 //I know we shouldn't hijack Microsoft namespaces but it's so much easier for consumers
 //to access these extensions this way
-namespace Microsoft.AspNet.Builder
+namespace Microsoft.Extensions.DependencyInjection
 {
 	/// <summary>
 	/// Extensions for Fluent MvcBuilder interfaces.

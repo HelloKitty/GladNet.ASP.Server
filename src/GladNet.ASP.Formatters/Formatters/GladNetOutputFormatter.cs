@@ -1,6 +1,6 @@
 ﻿using GladNet.Message;
 using GladNet.Serializer;
-using Microsoft.AspNet.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,6 @@ namespace GladNet.ASP.Formatters
 			serializerStrategy = serializationStrategy;
 
 			SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/gladnet"));
-			SupportedEncodings.Add(Encoding.GetEncoding("utf-8"));
 		}
 
 		/// <summary>
@@ -65,7 +64,7 @@ namespace GladNet.ASP.Formatters
 			if (!typeof(NetworkMessage).IsAssignableFrom(context.ObjectType))
 				return false;
 
-			context.ContentType = MediaTypeHeaderValue.Parse("application/gladnet");
+			context.ContentType = new Microsoft.Extensions.Primitives.StringSegment(@"application/gladnet");
 
 			return true;
 		}

@@ -1,6 +1,6 @@
 ﻿using GladNet.Message;
 using GladNet.Serializer;
-using Microsoft.AspNet.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
 using System;
 using System.Collections.Generic;

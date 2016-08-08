@@ -55,7 +55,20 @@ namespace GladNet.ASP.Formatters
 			try
 			{
 				//we expect a request message to ASP servers so we should deserialize as a request message.
-				return InputFormatterResult.SuccessAsync(deserializerStrategy.Deserialize<RequestMessage>(context.HttpContext.Request.Body));
+				RequestMessage message = deserializerStrategy.Deserialize<RequestMessage>(context.HttpContext.Request.Body);
+
+				//if nothing was deserialized we should return failure
+				if (message == null)
+					return InputFormatterResult.FailureAsync();
+
+				//This is important as we must deserialize the payload before passing it to the recieving controller
+				message.Payload.Deserialize(deserializerStrategy);
+
+				//If the payload is null or the datastate isn't default now then we failed
+				if (message.Payload.Data == null || message.Payload.DataState != NetSendableState.Default)
+					return InputFormatterResult.FailureAsync();
+
+				return InputFormatterResult.SuccessAsync(message);
 			}
 			catch (Exception)
 			{

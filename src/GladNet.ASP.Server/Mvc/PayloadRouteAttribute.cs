@@ -13,11 +13,12 @@ namespace GladNet.ASP.Server
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
 	public class PayloadRouteAttribute : RouteAttribute
 	{
-		public PayloadRouteAttribute() 
-			: base("")
+		public PayloadRouteAttribute(Type payloadType) 
+			: base($"api/{payloadType.Name}")
 		{
-			//provide nothing to base
-			//we hack it
+			//If it's not a child type then throw
+			if (!typeof(PacketPayload).IsAssignableFrom(payloadType))
+				throw new InvalidOperationException($"Provided Type is not a child of {nameof(PacketPayload)}. Type is: {payloadType?.FullName}.");
 		}
 	}
 }

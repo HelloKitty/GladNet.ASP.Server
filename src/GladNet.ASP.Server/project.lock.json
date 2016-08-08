@@ -2,6 +2,91 @@
   "locked": false,
   "version": 2,
   "targets": {
+    ".NETFramework,Version=v4.5": {
+      "Easyception/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Easyception.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Easyception.dll": {}
+        }
+      },
+      "GladNet.Common/2.0.16": {
+        "type": "package",
+        "dependencies": {
+          "Easyception": "2.0.0"
+        },
+        "compile": {
+          "lib/net35/GladNet.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net35/GladNet.Common.dll": {}
+        }
+      },
+      "GladNet.Encryption/2.0.16": {
+        "type": "package",
+        "compile": {
+          "lib/net35/GladNet.Encryption.dll": {}
+        },
+        "runtime": {
+          "lib/net35/GladNet.Encryption.dll": {}
+        }
+      },
+      "GladNet.Message/2.0.16": {
+        "type": "package",
+        "dependencies": {
+          "Easyception": "2.0.0",
+          "GladNet.Common": "2.0.16",
+          "GladNet.Encryption": "2.0.16",
+          "GladNet.Payload": "2.0.16",
+          "GladNet.Serializer": "2.0.16"
+        },
+        "compile": {
+          "lib/net35/GladNet.Message.dll": {}
+        },
+        "runtime": {
+          "lib/net35/GladNet.Message.dll": {}
+        }
+      },
+      "GladNet.Payload/2.0.16": {
+        "type": "package",
+        "dependencies": {
+          "Easyception": "2.0.0",
+          "GladNet.Serializer": "2.0.16"
+        },
+        "compile": {
+          "lib/net35/GladNet.Payload.dll": {}
+        },
+        "runtime": {
+          "lib/net35/GladNet.Payload.dll": {}
+        }
+      },
+      "GladNet.Serializer/2.0.16": {
+        "type": "package",
+        "dependencies": {
+          "Easyception": "2.0.0"
+        },
+        "compile": {
+          "lib/net35/GladNet.Serializer.dll": {}
+        },
+        "runtime": {
+          "lib/net35/GladNet.Serializer.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc/1.0.0": {
+        "type": "package"
+      },
+      "GladNet.ASP.Formatters/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "dependencies": {
+          "GladNet.Message": "2.0.16",
+          "GladNet.Serializer": "2.0.16",
+          "Microsoft.AspNetCore.Mvc": "1.0.0"
+        }
+      }
+    },
     ".NETFramework,Version=v4.5.1": {
       "Easyception/2.0.0": {
         "type": "package",
@@ -4909,6 +4994,7 @@
       "GladNet.Message >= 2.0.16",
       "Microsoft.AspNetCore.Mvc >= 1.0.0"
     ],
+    ".NETFramework,Version=v4.5": [],
     ".NETFramework,Version=v4.5.1": [],
     ".NETFramework,Version=v4.5.2": []
   },

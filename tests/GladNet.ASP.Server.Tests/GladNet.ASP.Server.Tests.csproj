@@ -332,6 +332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTests\PayloadRouteAttributeTests.cs" />
     <Compile Include="UnitTests\RequestControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>

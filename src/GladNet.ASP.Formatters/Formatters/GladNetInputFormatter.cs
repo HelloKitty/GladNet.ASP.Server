@@ -41,6 +41,10 @@ namespace GladNet.ASP.Formatters
 			IList<MediaTypeHeaderValue> mediaTypes = null;
 			MediaTypeHeaderValue.TryParseList(context.HttpContext.Request.ContentType.Split(','), out mediaTypes);
 
+			//If there is no media/content header then we can't read
+			if (mediaTypes == null || mediaTypes.Count == 0)
+				return false;
+
 			//If it has application/gladnet then we can probably read it
 			return mediaTypes.Select(x => x.MediaType).Contains("application/gladnet");
 		}

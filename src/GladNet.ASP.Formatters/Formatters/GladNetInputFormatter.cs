@@ -39,11 +39,11 @@ namespace GladNet.ASP.Formatters
 			//This parses the Content-Type from the HTML header
 			//It looks for Protobuf-Net
 			IList<MediaTypeHeaderValue> mediaTypes = null;
-			MediaTypeHeaderValue.TryParseList(context.HttpContext.Request.ContentType.Split(','), out mediaTypes);
 
-			//If there is no media/content header then we can't read
-			if (mediaTypes == null || mediaTypes.Count == 0)
+			if(!MediaTypeHeaderValue.TryParseList(context?.HttpContext?.Request?.ContentType?.Split(','), out mediaTypes))
+			{
 				return false;
+			}
 
 			//If it has application/gladnet then we can probably read it
 			return mediaTypes.Select(x => x.MediaType).Contains("application/gladnet");

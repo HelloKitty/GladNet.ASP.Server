@@ -20,6 +20,20 @@ namespace GladNet.ASP.Server.Tests
 			//assert
 			Assert.DoesNotThrow(() => new TestController());
 		}
+
+		[Test]
+		public void Test_Doesnt_Throw_On_Invalid_Model()
+		{
+			//arrange
+			TestController controller = new TestController();
+
+			//act
+			Task<IActionResult> result = controller.Post(null);
+
+			//assert
+			Assert.NotNull(result);
+			Assert.DoesNotThrow(() => result.Wait());
+		}
 	}
 
 	public class TestController : RequestController<PacketPayload>

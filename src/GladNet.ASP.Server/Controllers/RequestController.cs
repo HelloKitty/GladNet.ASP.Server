@@ -25,7 +25,7 @@ namespace GladNet.ASP.Server
 			//This works because if there is anything in the routing stack it wasn't from this ASP server so we can enable
 			//routeback and it'll be sent back through the system
 
-			TPayloadType payload = gladNetRequest.Payload.Data as TPayloadType;
+			TPayloadType payload = gladNetRequest?.Payload?.Data as TPayloadType;
 
 			if (payload == null)
 				return new BadRequestResult();

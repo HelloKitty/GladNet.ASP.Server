@@ -1,8 +1,8 @@
 {
   "version": "1.0.0-*",
     "dependencies": {
-        "GladNet.Message": "2.0.16",
-        "GladNet.Serializer": "2.0.16",
+        "GladNet.Message": "2.0.32",
+        "GladNet.Serializer": "2.0.32",
         "Microsoft.AspNetCore.Mvc": "1.0.0"
     },
 

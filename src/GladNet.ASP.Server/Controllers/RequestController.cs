@@ -16,7 +16,7 @@ namespace GladNet.ASP.Server
 		where TPayloadType : PacketPayload //must be packet payloads
 	{
 		[HttpPost]
-		public async Task<IActionResult> Post([FromBody]RequestMessage gladNetRequest)
+		public virtual async Task<IActionResult> Post([FromBody]RequestMessage gladNetRequest)
 		{
 			if (!ModelState.IsValid)
 				return new BadRequestResult();

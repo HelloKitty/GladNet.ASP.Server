@@ -8,6 +8,7 @@ using GladNet.ASP.Server;
 using GladNet.Payload;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GladNet.ASP.Server.Tests
 {
@@ -34,6 +35,16 @@ namespace GladNet.ASP.Server.Tests
 			Assert.NotNull(result);
 			Assert.DoesNotThrow(() => result.Wait());
 		}
+
+		[Test]
+		public void Test_Can_Find_Authoize_Attribute_On_OverridedPost()
+		{
+			//arrange
+			RequestController<PacketPayload> controller = new TestControllerAuthenticated();
+
+			//act
+			Assert.IsNotNull(controller.GetType().GetMethod(nameof(controller.Post)).GetCustomAttribute(typeof(AuthorizeAttribute), false));
+		}
 	}
 
 	public class TestController : RequestController<PacketPayload>
@@ -43,4 +54,12 @@ namespace GladNet.ASP.Server.Tests
 			throw new NotImplementedException();
 		}
 	}
+	public class TestControllerAuthenticated : AuthenticatedRequestController<PacketPayload>
+	{
+		public override Task<PacketPayload> HandlePost(PacketPayload payloadInstance)
+		{
+			throw new NotImplementedException();
+		}
+	}
+
 }

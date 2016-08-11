@@ -22,13 +22,16 @@ namespace GladNet.ASP.Server
 		protected string GladLiveUserName { get; private set; }
 
 		[Authorize] //override to mark Authorize
-		public override Task<IActionResult> Post([FromBody] RequestMessage gladNetRequest)
+		public override async Task<IActionResult> Post([FromBody] RequestMessage gladNetRequest)
 		{
+			if (!User.Identity.IsAuthenticated)
+				return Unauthorized(); //block unauthorized users from entering this critical section.
+
 			//Initialize the gladlive username from the username claim.
 			GladLiveUserName = User.Claims.Where(x => x.Type.ToLower() == "username").Select(x => x.Value).FirstOrDefault();
 
 			//Let base handle the request
-			return base.Post(gladNetRequest);
+			return await base.Post(gladNetRequest);
 		}
 	}
 }

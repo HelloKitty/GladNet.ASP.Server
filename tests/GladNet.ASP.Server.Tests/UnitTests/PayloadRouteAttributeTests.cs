@@ -22,7 +22,7 @@ namespace GladNet.ASP.Server.Tests
 		[Test]
 		public static void Test_Payload_Route_Attribute_Contains_PayloadName_In_Route()
 		{
-			Assert.IsTrue(typeof(PayloadRouteAttributeTests).GetCustomAttribute<PayloadRouteAttribute>().Template.Contains(nameof(PacketPayload)));
+			Assert.IsTrue(typeof(PayloadRouteAttributeTests).GetCustomAttribute<PayloadRouteAttribute>().Template.Contains("Packet"));
 		}
 	}
 }

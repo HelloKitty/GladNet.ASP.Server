@@ -34,7 +34,7 @@ The end-point URL for requests in all current GladNet.ASP.Server and client impl
 
 ```
 
-HTTP POST to {BaseUrl}/api/{GladNet.Common.PacketPayload Name}
+HTTP POST to {BaseUrl}/api/{GladNet.Common.PacketPayload Name} without Payload suffix or GenericType data
 
 ```
 

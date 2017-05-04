@@ -20,7 +20,7 @@ namespace GladNet.ASP
 			: base(value)
 		{
 			//Writes the content types to be only the protobuf-net content type
-			this.ContentTypes.Clear();
+			ContentTypes.Clear();
 			ContentTypes.Add(new MediaTypeHeaderValue("application/gladnet"));
 		}
 	}

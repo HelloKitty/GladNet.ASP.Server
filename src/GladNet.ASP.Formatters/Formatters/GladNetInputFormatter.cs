@@ -22,10 +22,7 @@ namespace GladNet.ASP.Formatters
 
 		public GladNetInputFormatter(IDeserializerStrategy deserializationStrategy)
 		{
-			if (deserializationStrategy == null)
-				throw new ArgumentNullException(nameof(deserializationStrategy), $"Input formatter requires a deserialization strategy.");
-
-			deserializerStrategy = deserializationStrategy;
+			deserializerStrategy = deserializationStrategy ?? throw new ArgumentNullException(nameof(deserializationStrategy), $"Input formatter requires a deserialization strategy.");
 		}
 
 		/// <summary>
@@ -40,13 +37,8 @@ namespace GladNet.ASP.Formatters
 			//It looks for Protobuf-Net
 			IList<MediaTypeHeaderValue> mediaTypes = null;
 
-			if(!MediaTypeHeaderValue.TryParseList(context?.HttpContext?.Request?.ContentType?.Split(','), out mediaTypes))
-			{
-				return false;
-			}
-
 			//If it has application/gladnet then we can probably read it
-			return mediaTypes.Select(x => x.MediaType).Contains("application/gladnet");
+			return MediaTypeHeaderValue.TryParseList(context?.HttpContext?.Request?.ContentType?.Split(','), out mediaTypes) && mediaTypes.Select(x => x.MediaType).Contains("application/gladnet");
 		}
 
 		/// <summary>
@@ -78,7 +70,6 @@ namespace GladNet.ASP.Formatters
 			{
 				return InputFormatterResult.FailureAsync();
 			}
-
 		}
 	}
 }

@@ -17,18 +17,35 @@ namespace GladNet.ASP.Server
 		where TPayloadType : PacketPayload //must be packet payloads
 	{
 		/// <summary>
-		/// The GladLive username of the remote peer.
+		/// The authenticated username of the remote peer.
 		/// </summary>
-		protected string GladLiveUserName { get; private set; }
+		protected string IdentityName { get; private set; }
+
+		/// <summary>
+		/// The authenticated userid of the remote peer.
+		/// </summary>
+		protected int IdentityId { get; private set; }
 
 		[Authorize] //override to mark Authorize
 		public override async Task<IActionResult> Post([FromBody] RequestMessage gladNetRequest)
 		{
+			if (gladNetRequest == null) throw new ArgumentNullException(nameof(gladNetRequest));
+
 			if (!User.Identity.IsAuthenticated)
 				return Unauthorized(); //block unauthorized users from entering this critical section.
 
+			//This now works, with the new Auth module in 2017
 			//Initialize the gladlive username from the username claim.
-			GladLiveUserName = User.Claims.Where(x => x.Type.ToLower() == "username").Select(x => x.Value).FirstOrDefault();
+			IdentityName = User.Identity.Name;
+			string stringId = User.Claims.FirstOrDefault(c => c.Type == @"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+
+			//TODO: Log?
+			int result = 0;
+			if(String.IsNullOrWhiteSpace(stringId))
+				if (!Int32.TryParse(stringId, out result))
+					return Unauthorized();
+
+			IdentityId = result;
 
 			//Let base handle the request
 			return await base.Post(gladNetRequest);

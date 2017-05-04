@@ -29,6 +29,11 @@ namespace Microsoft.Extensions.DependencyInjection
 		/// <returns>The fluent <see cref="IServiceCollection"/> instance.</returns>
 		public static IServiceCollection AddGladNet(this IServiceCollection builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat, ISerializerRegistry registry)
 		{
+			if (builder == null) throw new ArgumentNullException(nameof(builder));
+			if (serializerStrat == null) throw new ArgumentNullException(nameof(serializerStrat));
+			if (deserializerStrat == null) throw new ArgumentNullException(nameof(deserializerStrat));
+			if (registry == null) throw new ArgumentNullException(nameof(registry));
+
 			//need to register these types
 			registry.Register(typeof(NetworkMessage));
 			registry.Register(typeof(PacketPayload));

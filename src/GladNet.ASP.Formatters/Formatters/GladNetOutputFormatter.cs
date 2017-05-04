@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 
 namespace GladNet.ASP.Formatters
 {
@@ -22,10 +23,7 @@ namespace GladNet.ASP.Formatters
 
 		public GladNetOutputFormatter(ISerializerStrategy serializationStrategy)
 		{
-			if (serializationStrategy == null)
-				throw new ArgumentNullException(nameof(serializationStrategy), $"Input formatter requires a serialization strategy.");
-
-			serializerStrategy = serializationStrategy;
+			serializerStrategy = serializationStrategy ?? throw new ArgumentNullException(nameof(serializationStrategy), $"Input formatter requires a serialization strategy.");
 
 			SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/gladnet"));
 		}
@@ -35,16 +33,15 @@ namespace GladNet.ASP.Formatters
 		/// </summary>
 		/// <param name="context">Formatter context.</param>
 		/// <returns>Waitable writing <see cref="Task"/></returns>
-		public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context)
+		public override Task WriteResponseBodyAsync([NotNull] OutputFormatterWriteContext context)
 		{
+			if (context == null) throw new ArgumentNullException(nameof(context));
+
 			//We need to check if the message contains a payload as we must
 			//manually serialize that field
 			IPayloadContainer container = context.Object as IPayloadContainer;
 
-			if(container != null)
-			{
-				container.Payload.Serialize(serializerStrategy);
-			}
+			container?.Payload.Serialize(serializerStrategy);
 
 			//Serializes the Object into the response stream
 			serializerStrategy.Serialize(context.HttpContext.Response.Body, context.Object);
@@ -58,8 +55,10 @@ namespace GladNet.ASP.Formatters
 		/// </summary>
 		/// <param name="context">Formatter context.</param>
 		/// <returns>True if the formatter can write/format the context.</returns>
-		public override bool CanWriteResult(OutputFormatterCanWriteContext context)
+		public override bool CanWriteResult([NotNull] OutputFormatterCanWriteContext context)
 		{
+			if (context == null) throw new ArgumentNullException(nameof(context));
+
 			//Checks if the message is a NetworkMessage and thus serializable.
 			if (!typeof(NetworkMessage).IsAssignableFrom(context.ObjectType))
 				return false;

@@ -16,6 +16,8 @@ namespace GladNet.ASP.Server
 		public PayloadRouteAttribute(Type payloadType) 
 			: base($"api/{GetNameWithoutGenericArity(payloadType).TrimEnd("Payload".ToArray())}") //basically maps to api/PayloadName without generic stuff like '1 or the Payload identifier at the end of the TypeName.
 		{
+			if (payloadType == null) throw new ArgumentNullException(nameof(payloadType));
+
 			//If it's not a child type then throw
 			if (!typeof(PacketPayload).IsAssignableFrom(payloadType))
 				throw new InvalidOperationException($"Provided Type is not a child of {nameof(PacketPayload)}. Type is: {payloadType?.FullName}.");
@@ -24,6 +26,8 @@ namespace GladNet.ASP.Server
 		//based on: http://stackoverflow.com/questions/6386202/get-type-name-without-any-generics-info
 		private static string GetNameWithoutGenericArity(Type t)
 		{
+			if (t == null) throw new ArgumentNullException(nameof(t));
+
 			string name = t.Name;
 			int index = name.IndexOf('`');
 			return index == -1 ? name : name.Substring(0, index);

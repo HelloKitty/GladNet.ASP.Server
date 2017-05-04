@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 
 //I know we shouldn't hijack Microsoft namespaces but it's so much easier for consumers
 //to access these extensions this way
@@ -24,8 +25,12 @@ namespace Microsoft.Extensions.DependencyInjection
 		/// <param name="serializerStrat">Serialization strategy</param>
 		/// <param name="deserializerStrat">Deserialization strategy.</param>
 		/// <returns>The fluent <see cref="IMvcCoreBuilder"/> instance.</returns>
-		public static IMvcCoreBuilder AddGladNetFormatters(this IMvcCoreBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
+		public static IMvcCoreBuilder AddGladNetFormatters([NotNull] this IMvcCoreBuilder builder, [NotNull] ISerializerStrategy serializerStrat, [NotNull] IDeserializerStrategy deserializerStrat)
 		{
+			if (builder == null) throw new ArgumentNullException(nameof(builder));
+			if (serializerStrat == null) throw new ArgumentNullException(nameof(serializerStrat));
+			if (deserializerStrat == null) throw new ArgumentNullException(nameof(deserializerStrat));
+
 			//Add the formatters to the options.
 			return builder.AddMvcOptions(options =>
 			{
@@ -43,8 +48,12 @@ namespace Microsoft.Extensions.DependencyInjection
 		/// <param name="serializerStrat">Serialization strategy</param>
 		/// <param name="deserializerStrat">Deserialization strategy.</param>
 		/// <returns>The fluent <see cref="IMvcCoreBuilder"/> instance.</returns>
-		public static IMvcBuilder AddGladNetFormatters(this IMvcBuilder builder, ISerializerStrategy serializerStrat, IDeserializerStrategy deserializerStrat)
+		public static IMvcBuilder AddGladNetFormatters([NotNull] this IMvcBuilder builder, [NotNull] ISerializerStrategy serializerStrat, [NotNull] IDeserializerStrategy deserializerStrat)
 		{
+			if (builder == null) throw new ArgumentNullException(nameof(builder));
+			if (serializerStrat == null) throw new ArgumentNullException(nameof(serializerStrat));
+			if (deserializerStrat == null) throw new ArgumentNullException(nameof(deserializerStrat));
+
 			//Add the formatters to the options.
 			return builder.AddMvcOptions(options =>
 			{

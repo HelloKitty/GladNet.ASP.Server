@@ -16,6 +16,7 @@ namespace GladNet.ASP.Server
 	public abstract class AuthenticatedRequestController<TPayloadType> : RequestController<TPayloadType>
 		where TPayloadType : PacketPayload //must be packet payloads
 	{
+		//TODO: Combine this into some sort of identity object
 		/// <summary>
 		/// The authenticated username of the remote peer.
 		/// </summary>
@@ -41,9 +42,11 @@ namespace GladNet.ASP.Server
 
 			//TODO: Log?
 			int result = 0;
-			if(String.IsNullOrWhiteSpace(stringId))
-				if (!Int32.TryParse(stringId, out result))
-					return Unauthorized();
+			if (String.IsNullOrWhiteSpace(stringId))
+				return Unauthorized();
+
+			if (!Int32.TryParse(stringId, out result))
+				return Unauthorized();
 
 			IdentityId = result;
 

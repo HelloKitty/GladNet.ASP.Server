@@ -15,6 +15,7 @@ namespace GladNet.ASP.Server
 	public abstract class RequestController<TPayloadType> : Controller
 		where TPayloadType : PacketPayload //must be packet payloads
 	{
+		[HttpPost]
 		public virtual async Task<IActionResult> Post([FromBody]RequestMessage gladNetRequest)
 		{
 			if (!ModelState.IsValid)

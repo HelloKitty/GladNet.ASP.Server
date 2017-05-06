@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace GladNet.ASP.Server.Tests
 {
 	[TestFixture]
-	[PayloadRoute(typeof(PacketPayload))]
+	[PayloadRoute(typeof(GameServerListRequestPayload))]
 	public class PayloadRouteAttributeTests
 	{
 		[Test]
@@ -22,7 +22,18 @@ namespace GladNet.ASP.Server.Tests
 		[Test]
 		public static void Test_Payload_Route_Attribute_Contains_PayloadName_In_Route()
 		{
-			Assert.IsTrue(typeof(PayloadRouteAttributeTests).GetCustomAttribute<PayloadRouteAttribute>().Template.Contains("Packet"));
+			Assert.IsTrue(typeof(PayloadRouteAttributeTests).GetCustomAttribute<PayloadRouteAttribute>().Template.Contains("Game"));
+		}
+
+		[Test]
+		public static void Test_Payload_Route_Attribute_Does_Not_Contain_Payload_Suffix()
+		{
+			Assert.IsFalse(typeof(PayloadRouteAttributeTests).GetCustomAttribute<PayloadRouteAttribute>().Template.Contains("Payload"));
+		}
+
+		public class GameServerListRequestPayload : PacketPayload
+		{
+			
 		}
 	}
 }

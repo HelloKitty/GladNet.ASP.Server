@@ -15,7 +15,6 @@ namespace GladNet.ASP.Server
 	public abstract class RequestController<TPayloadType> : Controller
 		where TPayloadType : PacketPayload //must be packet payloads
 	{
-		[HttpPost]
 		public virtual async Task<IActionResult> Post([FromBody]RequestMessage gladNetRequest)
 		{
 			if (!ModelState.IsValid)
@@ -50,6 +49,6 @@ namespace GladNet.ASP.Server
 		/// </summary>
 		/// <param name="payloadInstance">Provided internally parsed instance.</param>
 		/// <returns>An awaitable PacketPayload result.</returns>
-		public abstract Task<PacketPayload> HandlePost(TPayloadType payloadInstance);
+		protected abstract Task<PacketPayload> HandlePost(TPayloadType payloadInstance);
 	}
 }

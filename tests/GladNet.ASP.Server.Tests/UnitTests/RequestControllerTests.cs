@@ -49,14 +49,14 @@ namespace GladNet.ASP.Server.Tests
 
 	public class TestController : RequestController<PacketPayload>
 	{
-		public override Task<PacketPayload> HandlePost(PacketPayload payloadInstance)
+		protected override Task<PacketPayload> HandlePost(PacketPayload payloadInstance)
 		{
 			throw new NotImplementedException();
 		}
 	}
 	public class TestControllerAuthenticated : AuthenticatedRequestController<PacketPayload>
 	{
-		public override Task<PacketPayload> HandlePost(PacketPayload payloadInstance)
+		protected override Task<PacketPayload> HandlePost(PacketPayload payloadInstance)
 		{
 			throw new NotImplementedException();
 		}

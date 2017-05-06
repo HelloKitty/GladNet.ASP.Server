@@ -1,1 +1,0 @@
-msbuild GladNet.ASP.Server.sln /p:Configuration=Release
